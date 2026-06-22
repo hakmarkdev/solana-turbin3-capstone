@@ -36,4 +36,4 @@ solana airdrop 100 "$(solana address -k "$WALLET")" --url "$RPC" >/dev/null
 solana program deploy "$PROGRAM_SO" --program-id "$PROGRAM_KP" --keypair "$WALLET" --url "$RPC"
 
 echo "Running tests"
-anchor test --skip-local-validator --skip-deploy
+anchor test --skip-local-validator --skip-deploy --provider.cluster "$RPC"
